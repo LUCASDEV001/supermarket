@@ -1,113 +1,223 @@
-import Image from 'next/image'
+"use client";
+import Image from "next/image";
+import { ImPriceTag } from "react-icons/im";
+import { LuChefHat } from "react-icons/lu";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import { Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/pagination";
 
 export default function Home() {
+  const slides = [
+    {
+      image: "/products/leite.png",
+      description: "Leite Integral Ninho ou Desnatado Molico • 1L",
+      price: "R$ 3.67",
+    },
+    {
+      image: "/products/salsicha.png",
+      description: "Salsicha Hot Dog Perdigão ou Sadia a Granel • KG",
+      price: "R$ 7,97",
+    },
+    {
+      image: "/products/linguica.png",
+      description: "Linguiça Calabresa Seara a Granel • KG",
+      price: "R$ 15,98",
+    },
+    {
+      image: "/products/carne.png",
+      description: "Alcatra Bovina com Maminha Minerva ou Friboi • KG",
+      price: "R$ 26.98",
+    },
+    {
+      image: "/products/margarina1.png",
+      description: "Margarina Claybom ou Cremosy • 500g",
+      price: "R$ 3.97",
+    },
+    {
+      image: "/products/lava-roupas-omo.png",
+      description: "Lava Roupas Líquido Omo • 3L",
+      price: "R$ 28.90",
+    },
+    {
+      image: "/products/lava-roupas-tixan.png",
+      description: "Lava Roupas em Pó Tixan Primavera • 2.2Kg ",
+      price: "R$ 15.80",
+    },
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <div>
+      <section>
+        <div className="p-3 pt-28 justify-around flex items-center container mx-auto">
+          <div className="hidden md:block">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              width={150}
+              height={150}
+              alt="carrinho-de-compras"
+              src="/shopping-cart.png"
+            />
+          </div>
+
+          <form
+            action="#"
+            method="GET"
+            className="w-2/4 h-12 border border-gray-300 placeholder-gray-500 text-gray-700 px-4 rounded-lg relative"
+          >
+            <input
+              type="search"
+              placeholder="O que procura?"
+              className="w-full h-full pl-7 rounded-lg outline-none "
+            />
+            <div className="absolute left-3 top-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+            </div>
+          </form>
+
+          <div className="hidden md:block">
+            <Image
+              width={150}
+              height={150}
+              alt="carrinho-de-compras"
+              src="/man-with-shopping-cart.png"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-5 bg-gradient-to-l from-green-600 to-green-900 p-6">
+        <div>
+          <ul className="flex justify-center gap-16 text-white font-bold">
+            <li>
+              <AiOutlineShoppingCart className="w-7 h-7 mx-auto" />
+              <a> Supermercantil</a>
+            </li>
+            <li>
+              <LuChefHat className="w-7 h-7 mx-auto" />
+              <a>Receitas</a>
+            </li>
+            <li>
+              <ImPriceTag className="w-7 h-7 mx-auto" />
+              Ofertas
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div className="flex justify-center bg-gradient-to-bl from-yellow-300 via-orange-400 to-orange-600">
+          <Image
+            width={1920}
+            height={867}
+            alt="ofertas-da-semana"
+            src="/grandes-ofertas.png"
+            className="md:w-[800px] md:h-[360px] bg-cover"
+          />
+        </div>
+
+        <div className="pt-14">
+          <h1 className="flex font-sans text-center justify-center text-xl md:text-[28px] font-bold text-red-600">
+            OFERTAS PARA LIMPAR O ESTOQUE!
+          </h1>
+        </div>
+
+        <div className="pt-14 mx-auto md:px-32 container border mt-5 shadow-md cursor-pointer swiper-container">
+          <Swiper
+            spaceBetween={50}
+            loop={true}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
+            modules={[Pagination, Autoplay]}
+            slidesPerView={5}
+            // Adicione breakpoints para ajustar o número de slides visíveis em diferentes tamanhos de tela
+            breakpoints={{
+              1024: {
+                slidesPerView: 4,
+              },
+              768: {
+                slidesPerView: 3,
+              },
+              640: {
+                slidesPerView: 2,
+              },
+              320: {
+                slidesPerView: 1,
+              },
+            }}
+          >
+            {slides.map((slide, index) => (
+              <SwiperSlide key={index}>
+                <div className="bg-white p-4 rounded shadow-lg">
+                  <Image
+                    src={slide.image}
+                    alt="Imagem do Produto"
+                    width={300}
+                    height={200}
+                    className="w-full h-auto"
+                  />
+                  <h2 className="flex text-center h-16 pt-5 text-gray-700 font-semibold">
+                    {slide.description}
+                  </h2>
+                  <p className="text-red-600 text-lg font-bold pt-12">
+                    {slide.price}
+                  </p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
+      <section className="pt-20 mb-20">
+        <h2 className="md:w-2/5 mx-auto font-sans text-center text-xl w-3/4 md:text-[28px] font-bold text-sky-800">
+          SIGA-NOS EM NOSSAS REDES SOCIAIS E{" "}
+          <span className="text-red-600">FIQUE POR DENTRO</span> DAS NOVIDADES!
+        </h2>
+        <div className="pt-10">
+          <a className="flex items-center mx-auto justify-center ">
+            <Image
+              src="/supermercantil.png"
+              alt="logo"
+              width={150}
+              height={150}
+              className="w-20"
             />
           </a>
+          <h2 className="mx-auto text-center justify-center font-bold text-sky-900">
+            <a href="https://www.instagram.com/" target="_blank">
+              @supermercantil
+            </a>
+          </h2>
+          <div className="mx-auto text-center justify-center pt-5">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              className=" bg-green-700 hover:bg-sky-800 duration-200 cursor-pointer px-4 py-3 rounded-lg font-bold text-white"
+            >
+              Seguir
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      </section>
+    </div>
+  );
 }
