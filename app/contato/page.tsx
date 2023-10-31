@@ -9,7 +9,7 @@ function page() {
             ENTRE EM CONTATO CONOSCO
           </h2>
           <div className="border-b mt-5 w-4/5 lg:w-2/5 mx-auto"></div>
-          <p className="text-center text-sky-500 pt-2">
+          <p className="text-center font-bold text-sky-500 pt-2">
             Envie-nos uma mensagem
           </p>
         </div>
@@ -17,7 +17,7 @@ function page() {
         <div className="py-8 lg:py-8 px-4 mx-auto max-w-screen-md">
           <form action="#" className="space-y-5">
             <div>
-              <label className="block mb-1 text-sm font-medium text-green-500">
+              <label className="block mb-1 text-sm font-bold text-green-500">
                 E-mail
               </label>
               <input
@@ -29,7 +29,7 @@ function page() {
               />
             </div>
             <div>
-              <label className="block mb-1 text-sm font-medium text-green-500 ">
+              <label className="block mb-1 text-sm font-bold text-green-500 ">
                 Telefone
               </label>
               <input
@@ -41,7 +41,7 @@ function page() {
               />
             </div>
             <div>
-              <label className="block mb-1 text-sm font-medium text-green-500 ">
+              <label className="block mb-1 text-sm font-bold text-green-500 ">
                 Assunto
               </label>
               <input
@@ -53,13 +53,13 @@ function page() {
               />
             </div>
             <div className="sm:col-span-2">
-              <label className="block mb-2 text-sm font-medium text-green-500 ">
+              <label className="block mb-2 text-sm font-bold text-green-500 ">
                 Mensagem
               </label>
               <textarea
                 id="message"
                 rows={5}
-                className="block p-2.5 w-full text-sm text-gray-900  rounded-lg shadow-sm border border-gray-300 outline-none"
+                className="block resize-none p-2.5 w-full text-sm text-gray-900  rounded-lg shadow-sm border border-gray-300 outline-none"
                 placeholder="Digite sua mensagem aqui"
                 required minLength={10}
               ></textarea>
@@ -70,7 +70,7 @@ function page() {
             </p>
             <button
               type="submit"
-              className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-green-600 hover:bg-green-700 duration-200 outline-none"
+              className="py-3 px-5 text-sm font-bold text-center text-white rounded-lg bg-green-600 hover:bg-green-700 duration-200 outline-none"
             >
               Enviar Mensagem
             </button>

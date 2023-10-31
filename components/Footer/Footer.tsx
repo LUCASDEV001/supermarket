@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { AiTwotoneCustomerService } from "react-icons/ai";
 
 function Footer() {
@@ -31,21 +32,27 @@ function Footer() {
               Outras Opções
             </h6>
             <p className="mb-4">
-              <a href="#!" className="text-green-600 dark:text-green-200">
+              <Link
+                href="/servicos/pagamentos"
+                className="text-green-600 dark:text-green-200"
+              >
                 Formas de Pagamento
-              </a>
+              </Link>
             </p>
             <p className="mb-4">
-              <a href="#!" className="text-green-600 dark:text-green-200">
+              <Link
+                href="https://www.ifood.com.br/"
+                target="_blank"
+                className="text-green-600 dark:text-green-200"
+              >
                 Ifood
-              </a>
+              </Link>
             </p>
             <p className="mb-4">
-              <a href="#!" className="text-green-600 dark:text-green-200">
+              <Link href="/" className="text-green-600 dark:text-green-200">
                 Ofertas
-              </a>
+              </Link>
             </p>
-            
           </div>
 
           <div className="">
@@ -53,39 +60,46 @@ function Footer() {
               Links Úteis
             </h6>
             <p className="mb-4">
-              <a href="#!" className="text-green-600 dark:text-green-200">
+              <Link href="/" className="text-green-600 dark:text-green-200">
                 Início
-              </a>
+              </Link>
             </p>
             <p className="mb-4">
-              <a href="#!" className="text-green-600 dark:text-green-200">
+              <Link
+                href="/servicos"
+                className="text-green-600 dark:text-green-200"
+              >
                 Serviços
-              </a>
+              </Link>
             </p>
             <p className="mb-4">
-              <a href="#!" className="text-green-600 dark:text-green-200">
+              <Link
+                href="/historia"
+                className="text-green-600 dark:text-green-200"
+              >
                 História
-              </a>
+              </Link>
             </p>
             <p>
-              <a href="#!" className="text-green-600 dark:text-green-200">
+              <Link
+                href="/contato"
+                className="text-green-600 dark:text-green-200"
+              >
                 Contato
-              </a>
+              </Link>
             </p>
           </div>
-
-      
         </div>
       </div>
 
       <div className="bg-green-200 p-6 text-center dark:bg-green-700">
         <span>© 2023 Todos os Direitos Reservados • </span>
-        <a
+        <Link
           className="font-semibold text-green-600 dark:text-green-400"
-          href="#"
+          href="/"
         >
           Supermercantil
-        </a>
+        </Link>
       </div>
     </div>
   );

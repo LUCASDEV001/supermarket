@@ -11,6 +11,8 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 
+import Link from "next/link";
+
 export default function Home() {
   const slides = [
     {
@@ -105,35 +107,39 @@ export default function Home() {
       <section className="mt-5 bg-gradient-to-l from-green-600 to-green-900 p-6">
         <div>
           <ul className="flex justify-center gap-16 text-white font-bold">
-            <li>
-              <AiOutlineShoppingCart className="w-7 h-7 mx-auto" />
-              <a> Supermercantil</a>
-            </li>
-            <li>
-              <LuChefHat className="w-7 h-7 mx-auto" />
-              <a>Receitas</a>
-            </li>
-            <li>
-              <ImPriceTag className="w-7 h-7 mx-auto" />
-              Ofertas
-            </li>
+            <Link href="/historia">
+              <li>
+                <AiOutlineShoppingCart className="w-7 h-7 mx-auto" />
+                <div> Supermercantil</div>
+              </li>
+            </Link>
+
+            <Link href="#ofertas">
+              <li>
+                <ImPriceTag className="w-7 h-7 mx-auto" />
+                Super Ofertas
+              </li>
+            </Link>
           </ul>
         </div>
       </section>
 
       <section>
-        <div className="flex justify-center bg-gradient-to-bl from-yellow-300 via-orange-400 to-orange-600">
+        <div className="flex cursor-pointer justify-center bg-gradient-to-bl from-yellow-300 via-orange-400 to-orange-600">
           <Image
             width={1920}
             height={867}
             alt="ofertas-da-semana"
             src="/grandes-ofertas.png"
-            className="md:w-[800px] md:h-[360px] bg-cover"
+            className="md:w-[800px] md:h-[360px] bg-cover select-none pointer-events-none"
           />
         </div>
 
         <div className="pt-14">
-          <h1 className="flex font-sans text-center justify-center text-xl md:text-[28px] font-bold text-red-600">
+          <h1
+            id="ofertas"
+            className="flex font-sans text-center justify-center text-xl md:text-[28px] font-bold text-red-600"
+          >
             OFERTAS PARA LIMPAR O ESTOQUE!
           </h1>
         </div>
@@ -199,7 +205,7 @@ export default function Home() {
               alt="logo"
               width={150}
               height={150}
-              className="w-20"
+              className="w-20 select-none cursor-pointer"
             />
           </a>
           <h2 className="mx-auto text-center justify-center font-bold text-sky-900">

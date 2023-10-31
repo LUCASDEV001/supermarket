@@ -13,6 +13,7 @@ function Navbar() {
   return (
     <div className="fixed w-full z-10 flex items-center justify-between text-center bg-green-700 p-3">
       <div className="flex items-center">
+        <Link href="/">
         <Image
           src="/logo.png"
           alt="logo"
@@ -20,6 +21,7 @@ function Navbar() {
           height={150}
           className="md:mx-5"
         />
+        </Link>
       </div>
 
       <ul
@@ -163,48 +165,48 @@ function Navbar() {
             </button>
             <ul className="my-5">
               <li className="my-4 ">
-                <a
+                <Link
                   className="text-sky-900 font-bold hover:text-sky-600 duration-200"
-                  href="#"
+                  href="/"
                 >
                   Início
-                </a>
+                </Link>
                 <div className="border-b my-3"></div>
               </li>
               <li className="my-4 ">
-                <a
+                <Link
                   className="text-sky-900 font-bold hover:text-sky-600 duration-200"
-                  href="#"
+                  href="/servicos"
                 >
                   Serviços
-                </a>
+                </Link>
                 <div className="border-b my-3"></div>
               </li>
               <li className="my-4 ">
-                <a
+                <Link
                   className="text-sky-900 font-bold hover:text-sky-600 duration-200"
-                  href="#"
+                  href="/historia"
                 >
                   História
-                </a>
+                </Link>
                 <div className="border-b my-3"></div>
               </li>
               <li className="my-4 ">
-                <a
+                <Link
                   className="text-sky-900 font-bold hover:text-sky-600 duration-200"
-                  href="#"
+                  href="/contato"
                 >
                   Contato
-                </a>
+                </Link>
                 <div className="border-b my-3"></div>
               </li>
               <li className="my-5">
-                <a
+                <Link
                   className="bg-green-600 hover:bg-green-800 duration-200 shadow-md cursor-pointer px-3 py-2 rounded-md font-bold text-white"
-                  href="#"
+                  href="/"
                 >
                   Ofertas
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
